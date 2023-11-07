@@ -1,0 +1,23 @@
+{
+    "emeraldwalk.runonsave": {
+        "autoClearConsole": true,
+        "commands": [
+            {
+                "match": "lab\/.+py",
+                "cmd": "python ${fileDirname}/../../auto_grader.py ${file}",
+            },
+            {
+                "match": "lab\\\\.+py",
+                "cmd": "${fileDirname}\\..\\..\\.venv\\Scripts\\activate.bat && python ${fileDirname}\\..\\..\\auto_grader.py ${file}",
+            }
+        ]
+    },
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 3000, 
+    "editor.formatOnSave": true,    
+    "editor.formatOnType": false,
+    "editor.defaultFormatter": "ms-python.autopep8",
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    }
+}
