@@ -3,7 +3,7 @@ from config import API_ENDPOINT, API_KEY
 
 try:
     print("Calling to Google Cloud function and check grade, please wait.")
-    r = requests.post(API_ENDPOINT+"/testresults?key="+API_KEY)
+    r = requests.post(API_ENDPOINT+"/testresults?is_project=True&key="+API_KEY, timeout=12000)
     results = r.json()
     for result in results:
         print(result)
