@@ -76,3 +76,13 @@ def execfile(file_relative_path: str, temp_globals: dict = None, temp_locals: di
             print("File " + test_file_path_name + " not found!")
 
     return temp_globals, temp_locals, str(content), str(stdout.getvalue())
+
+class MyOutput(object):
+    def __init__(self):
+        self.data = []
+
+    def write(self, s):
+        self.data.append(s)
+
+    def __str__(self):
+        return "".join(self.data)
